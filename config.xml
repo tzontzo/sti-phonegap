@@ -3,14 +3,14 @@
 	xmlns="http://www.w3.org/ns/widgets" 
 	xmlns:gap="http://phonegap.com/ns/1.0" 
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	id="com.matrixlms.app2.android" 
+	id="org.medpower.mckesson.android" 
 	version="1.0.5">
-    <name>MATRIX</name>
+    <name>McKesson eLearning Services</name>
     <description>
-        Get the full functionality of MATRIX LMS by using the iOS Mobile App. MATRIX is a simple, powerful LMS for businesses that makes it easy to deliver online training.
+        Anytime access to custom education materials via online micro-learning modules.
     </description>
     <author email="graham@matrixlms.com" href="http://www.matrixlms.com">
-        MATRIX LMS Team
+        MedPower
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name='phonegap-version' value='cli-5.2.0' />
