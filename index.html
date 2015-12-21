@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="touch svg">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="initial-scale=1, width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/ipad-app.css" />
+        <link href="http://edu-20.com:3000/stylesheets/base-colors-user.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/stylesheets/themes/teal_portal.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/stylesheets/default-styles.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/stylesheets/styles-user.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/stylesheets/extra-user.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/stylesheets/fonts/font-all.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/stylesheets/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/stylesheets/jquery-ui-new.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/stylesheets/jquery.ui.theme.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/javascripts/plugins/mmenu/extensions/jquery.mmenu.positioning.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="http://edu-20.com:3000/javascripts/plugins/mmenu/jquery.mmenu.css" media="screen" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script type="text/javascript">
+            function is_mobile_app_mode(){
+                return true;
+            }
+            function is_left_nav_mode(){
+                return true;
+            }
+            function is_mobile_device(){
+                return true;
+            }
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="http://edu-20.com:3000/javascripts/plugins/jquery.menu-aim.js"></script>
+        <script type="text/javascript" src="http://edu-20.com:3000/javascripts/functions.js?150"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="http://edu-20.com:3000/javascripts/jquery-caret-ui-timepicker.js"></script>
+        <script type="text/javascript" src="http://edu-20.com:3000/javascripts/jquery.tools-1.2.4-min.js"></script>
+        <script type="text/javascript" src="http://edu-20.com:3000/javascripts/plugins/mmenu/jquery.mmenu.min.all.js"></script>
+        <script type='text/javascript'>plugin_version=11;window.maxUploadLimit = '300mb';</script>
+        <script type="text/javascript" src="http://edu-20.com:3000/tinymce/4.1.6/js/tinymce/tinymce.min.js?23"></script>
+        <script type="text/javascript" src="js/tinymce.js"></script>
+        <script type="text/javascript">
+            try {
+                app.initialize();
+            } catch (err) {
+                document.getElementById('alertBlock').innerHTML = err.message;
+            }
+            </script>
+        <title>Edu2 IOS</title>
+    </head>
+    <body onload="try { app.docLoaded(); } catch (err) { document.getElementById('alertBlock').innerHTML = err.message; }" class="left-nav new-left-nav flat">
+        <div id="mobileAppWrapper">
+            <header></header>
+            <div id="courseToolbar"></div>
+            <nav role="navigation" id="leftColumn">
+                <ol class="thinMainNav"></ol>
+            </nav>
+            <iframe src="blank.html" frameborder="0" id="contentFrame" name="contentFrame" onload="try { app.loadComplete(); } catch (err) { document.getElementById('alertBlock').innerHTML = err.message; }"></iframe>
+            <div id="infoBar" role="navigation">
+                <p id="versionBlock">1.05</p>
+                <p class="alert" id="alertBlock">Loading...</p>
+                <a href="javascript:app.reloadPage();" class="loaderBlock loader" id="loaderBlock"></a>
+                <a href="javascript:app.goHome();" class="homeButton" id="homeButton"><i class="home inverted"></i></a>
+                <a href="javascript:void(0);" class="arrowLeft" id="arrowLeft"></a>
+                <a href="javascript:void(0);" class="arrowRight" id="arrowRight"></a>
+            </div>
+            <div id="loadingOverlay">
+                <div class="overlay"></div>
+                <span>Loading...</span>
+            </div>
+            <div id="facebox" class="editorContainer">
+                <div class="popup">
+                    <a href="#" class="close sendContent" style="z-index: 100; display: block;"></a>
+                    <div id="faceboxContent" class="content" style="position: relative; z-index: 1; display: inline-block;">
+                        <div class="header">
+                            <h4>Content editor</h4>
+                        </div>
+                        <div class="facebox-content">
+                            <textarea id="editorContent"></textarea>
+                            <div id="filecontainer"><div id="filelist"></div></div>
+                        </div>
+                        <div class="footer">
+                            <button name="commit" class="sendContent"><img class="popin" style="margin-top:4px" src="http://edu-20.com:3000/images/icons/pop-in.png" /></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
