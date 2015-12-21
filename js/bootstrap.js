@@ -1,9 +1,13 @@
 var appVersion = '1.05';
 
 var store = window.localStorage;
-var domain = 'edu-20.com:3000';
+//var domain = 'edu-20.com:3000';
 //var domain = 'www.matrixlms.com';
 //var domain = 'www.neolms.com';
+
+//branded apps
+var domain = 'mckesson.medpower.org';
+
 var domainProtocol = 'http';
 //var domainProtocol = 'https';
 var loginUrl = domainProtocol + '://' + domain + '/app/launch?version=' + appVersion + '&mobile_app=true&left_nav=true&new_left_nav=true&redirected=true&new_jwplayer=true';
