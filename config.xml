@@ -4,7 +4,7 @@
 	xmlns:gap="http://phonegap.com/ns/1.0" 
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="org.medpower.mckesson.android" 
-	version="1.0.5">
+	version="1.0.0">
     <name>McKesson eLearning Services</name>
     <description>
         Anytime access to custom education materials via online micro-learning modules.
@@ -70,6 +70,6 @@
 	<gap:plugin name="cordova-plugin-media" source="npm" version="1.0.1" />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
 	<gap:config-file platform="android" parent="/manifest">
-     <application android:debuggable="true" />
+     <application android:debuggable="false" />
 	</gap:config-file>
 </widget>
