@@ -10,8 +10,13 @@ var domain = 'mckesson.medpower.org';
 
 var domainProtocol = 'http';
 //var domainProtocol = 'https';
+
+//for regular apps
 //var loginUrl = domainProtocol + '://' + domain + '/app/launch?version=' + appVersion + '&mobile_app=true&left_nav=true&new_left_nav=true&redirected=true&new_jwplayer=true';
-var loginUrl = domainProtocol + '://' + domain + '/?mobile_app=true&left_nav=true&new_left_nav=true&redirected=true&new_jwplayer=true';
+
+//for branded apps
+var loginUrl = domainProtocol + '://' + domain + '/?mobile_app=true&branded_app=true&left_nav=true&new_left_nav=true&redirected=true&new_jwplayer=true';
+
 var isFirst = true;
 var wasOffline = false;
 var isPageLoaded = false;
