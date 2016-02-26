@@ -48,6 +48,10 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
 
         app.checkConnection();
+
+        $('body').on('click', function(e) {
+            console.log($(e.target).attr('class'));
+        });
     },
 
     onDeviceReady: function() {
@@ -365,7 +369,7 @@ var app = {
                             $(this).attr('href', $(this).attr('href').replace('http://' + domain, schoolProtocol + '://' + schoolDomain));
                         });
                     }
-                    store.setItem('currentSchool', schoolProtocol + '://' + schoolDomain + '/?mobile_app=true');
+                    store.setItem('currentSchool', schoolProtocol + '://' + schoolDomain + '/?mobile_app=true' + (isBrandedApp ? '&branded_app=true' : ''));
                     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, app.storeCurrentSchool, app.fail);
                     //console.log('Selected school: '+schoolDomain);
                 }
@@ -468,7 +472,7 @@ var app = {
                         $('#courseToolbar').html(data.content);
                         $('#courseToolbar').css({
                             top: 40,
-                            width: $(window).width() - 234,
+                            width: $(window).width() - 125,
                         });
                         $('#courseToolbar').show();
                     }
@@ -548,7 +552,10 @@ var app = {
                 break;
             case 'activateSaveButton':
                 if (typeof data.content != 'undefined') {
-                    $('.mce-imageinsert-btn').first().attr("class", "mce-widget mce-btn mce-primary mce-first mce-abs-layout-item mce-imageinsert-btn").off("click.insertImage").on("click.insertImage", function() {
+                    console.log('activateSaveButton, $(\'.mce-imageinsert-btn\'): ' + $('.mce-imageinsert-btn').first().length);
+                    $('.mce-md-local').remove();
+                    $('.mce-foot > .mce-abs-layout').prepend('<a href="javascript:void(0)" id="editor_save_btn">Save</a>');
+                    $('#editor_save_btn').click(function() {
                         window.frames[3].postMessage("{\"getUploadedImage\": \"1\"}", "*");
                     });
                 }
@@ -726,14 +733,12 @@ var app = {
         document.getElementById('contentFrame').contentWindow.postMessage("{\"windowHeight\": \"" + $(window).height() + "\", \"windowWidth\": \"" + $(window).width() + "\", \"scrollTop\": \"" + $(window).scrollTop() + "\"}", "*");
     },
     onAppLaunch: function() {
-    	isRunning = true;
         //console.log('checking if file was selected');
         if (!navigator.userAgent.match(/Android/i)) {
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, app.gotFS, app.fail);
         }
     },
     onPause: function() {
-    	isRunning = false;
         if (!navigator.userAgent.match(/Android/i)) {
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, app.gotFSforDelete, app.fail);
         }
@@ -776,13 +781,13 @@ var app = {
             } else {
                 fileToUpload = entries[0].fullPath;
                 if (schoolDomain.length) {
-                    iframeURL = schoolProtocol + '://' + schoolDomain + '/?mobile_app=true&new_jwplayer=true';
+                    iframeURL = schoolProtocol + '://' + schoolDomain + '/?mobile_app=true' + (isBrandedApp ? '&branded_app=true' : '');
                 } else {
                     iframeURL = loginUrl;
                 }
             }
             $('#contentFrame').attr('src', iframeURL);
-            //console.log('Opening URL: '+iframeURL);
+            console.log('Opening URL: ' + iframeURL);
             //app.uploadToLocker(entries[0].fullPath);
         }
     },
@@ -950,19 +955,17 @@ var app = {
                 }
                 break;
             case 'message':
-            	if(!isRunning){
-					var item_id = /\(ID: ([0-9]*)\)$/.exec(e.message);
-					var currentSchool = store.getItem('currentSchool');
-					console.log('is alert, item_id: ' + JSON.stringify(item_id));
-					if (e.message.charAt(0) == 'M') {
-						console.log('opening ' + currentSchool.replace('?mobile_app=true', 'inbox/show?message=' + item_id[1]));
-						app.updateStatusMessage('Loading message...');
-						$('#contentFrame').attr('src', currentSchool.replace('?mobile_app=true', 'inbox/show?message=' + item_id[1]));
-					} else {
-						console.log('opening ' + currentSchool.replace('?mobile_app=true', 'notifications/show?notification=' + item_id[1]));
-						app.updateStatusMessage('Loading notification...');
-						$('#contentFrame').attr('src', currentSchool.replace('?mobile_app=true', 'notifications/show?notification=' + item_id[1]));
-					}
+                var item_id = /\(ID: ([0-9]*)\)$/.exec(e.message);
+                var currentSchool = store.getItem('currentSchool');
+                console.log('is alert, item_id: ' + JSON.stringify(item_id));
+                if (e.message.charAt(0) == 'M') {
+                    console.log('opening ' + currentSchool.replace('?mobile_app=true', 'inbox/show?message=' + item_id[1]));
+                    app.updateStatusMessage('Loading message...');
+                    $('#contentFrame').attr('src', currentSchool.replace('?mobile_app=true', 'inbox/show?message=' + item_id[1]));
+                } else {
+                    console.log('opening ' + currentSchool.replace('?mobile_app=true', 'notifications/show?notification=' + item_id[1]));
+                    app.updateStatusMessage('Loading notification...');
+                    $('#contentFrame').attr('src', currentSchool.replace('?mobile_app=true', 'notifications/show?notification=' + item_id[1]));
                 }
                 break;
             case 'error':
@@ -1042,11 +1045,11 @@ var app = {
             if (loginCredentials.length) {
                 var loginCredentialsArray = loginCredentials.split("\n");
                 if (loginCredentialsArray[0] == 'auth_token_sso') {
-                    console.log('auth token found, opening ' + currentSchool.replace('?mobile_app=true', 'log_in/submit?auth_token=' + loginCredentialsArray[1] + '&mobile_app=true'));
-                    $('#contentFrame').attr('src', currentSchool.replace('?mobile_app=true', 'log_in/submit?auth_token=' + loginCredentialsArray[1] + '&mobile_app=true'));
+                    console.log('auth token found, opening ' + currentSchool.replace('?mobile_app=true', 'log_in/submit?auth_token=' + loginCredentialsArray[1] + '&mobile_app=true' + (isBrandedApp ? '&branded_app=true' : '')));
+                    $('#contentFrame').attr('src', currentSchool.replace('?mobile_app=true', 'log_in/submit?auth_token=' + loginCredentialsArray[1] + '&mobile_app=true' + (isBrandedApp ? '&branded_app=true' : '')));
                 } else {
-                    console.log('loginCredentials found, opening ' + currentSchool.replace('?mobile_app=true', 'log_in/submit?userid=' + loginCredentialsArray[0] + '&password=' + loginCredentialsArray[1] + '&mobile_app=true'));
-                    $('#contentFrame').attr('src', currentSchool.replace('?mobile_app=true', 'log_in/submit?userid=' + loginCredentialsArray[0] + '&password=' + loginCredentialsArray[1] + '&mobile_app=true'));
+                    console.log('loginCredentials found, opening ' + currentSchool.replace('?mobile_app=true', 'log_in/submit?userid=' + loginCredentialsArray[0] + '&password=' + loginCredentialsArray[1] + '&mobile_app=true' + (isBrandedApp ? '&branded_app=true' : '')));
+                    $('#contentFrame').attr('src', currentSchool.replace('?mobile_app=true', 'log_in/submit?userid=' + loginCredentialsArray[0] + '&password=' + loginCredentialsArray[1] + '&mobile_app=true' + (isBrandedApp ? '&branded_app=true' : '')));
                 }
             } else {
                 $('#contentFrame').attr('src', currentSchool);
@@ -1164,6 +1167,11 @@ function close_chat(chatroom_id, invited_user_id) {
         'overflow': 'visible'
     });
     $('#infoBar').show();
+}
+
+function load_in_app_browser(url) {
+    window.open(url, '_blank', 'location=yes');
+    return false;
 }
 
 // URL parameter parsing
@@ -1423,8 +1431,8 @@ function notification_mute() {
 $(document).ready(function() {
     // Handles external messaging (API).
     window.addEventListener("message", function(event) {
+        console.log('received message from ' + event.origin + ': ' + event.data);
         var data = JSON.parse(event.data);
-        //console.log('received message from '+event.origin+': '+event.data);
         app.receiveExternalMessage(data, event.origin);
     });
 

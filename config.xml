@@ -3,13 +3,13 @@
 	xmlns="http://www.w3.org/ns/widgets" 
 	xmlns:gap="http://phonegap.com/ns/1.0" 
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	id="org.medpower.mckesson.android" 
+	id="org.medpower.nyack.android" 
 	version="1.0.0">
-    <name>McKesson eLearning Services</name>
+    <name>Nyack eLearning Services</name>
     <description>
         Anytime access to custom education materials via online micro-learning modules.
     </description>
-    <author email="graham@matrixlms.com" href="http://www.matrixlms.com">
+    <author email="bhaggerty@medpower.org" href="http://nyack.medpower.org">
         MedPower
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
