@@ -5,11 +5,11 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="org.medpower.nyack.android" 
 	version="1.0.0">
-    <name>Nyack eLearning Services</name>
+    <name>Art Van Selling Institute</name>
     <description>
-        Anytime access to custom education materials via online micro-learning modules.
+        The Art Van Selling Institute (AVSI) is a sales education institute designed to inspire individuals to pursue and enhance their career in Sales. With the AVSI mobile app you can access course content, review assessments, track your progress, collaborate with fellow learners/instructors, share resources, receive notifications, and more.
     </description>
-    <author email="bhaggerty@medpower.org" href="http://nyack.medpower.org">
+    <author email="wadesolomon@yahoo.com" href="http://k2t.matrixlms.com">
         MedPower
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
@@ -35,6 +35,8 @@
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
     <icon gap:density="hdpi" gap:platform="android" src="res/icon/android/icon-72-hdpi.png" />
     <icon gap:density="xhdpi" gap:platform="android" src="res/icon/android/icon-96-xhdpi.png" />
+    <icon gap:density="xxhdpi" gap:platform="android" src="res/icon/android/icon-144-xhdpi.png" />
+    <icon gap:density="xxxhdpi" gap:platform="android" src="res/icon/android/icon-192-xhdpi.png" />
     <icon gap:platform="blackberry" src="res/icon/blackberry/icon-80.png" />
     <icon gap:platform="blackberry" gap:state="hover" src="res/icon/blackberry/icon-80.png" />
     <icon gap:platform="ios" height="57" src="res/icon/ios/icon-57.png" width="57" />
@@ -45,14 +47,18 @@
     <icon gap:platform="winphone" src="res/icon/windows-phone/icon-48.png" />
     <icon gap:platform="winphone" gap:role="background" src="res/icon/windows-phone/icon-173.png" />
     <gap:splash src="splash.png" />
-    <gap:splash gap:qualifier="port-ldpi" gap:platform="android" src="res/screen/android/screen-mdpi-portrait.png" />
-    <gap:splash gap:qualifier="port-mdpi" gap:platform="android" src="res/screen/android/screen-hdpi-portrait.png" />
-    <gap:splash gap:qualifier="port-hdpi" gap:platform="android" src="res/screen/android/screen-xhdpi-portrait.png" />
+    <gap:splash gap:qualifier="port-ldpi" gap:platform="android" src="res/screen/android/screen-ldpi-portrait.png" />
+    <gap:splash gap:qualifier="port-mdpi" gap:platform="android" src="res/screen/android/screen-mdpi-portrait.png" />
+    <gap:splash gap:qualifier="port-hdpi" gap:platform="android" src="res/screen/android/screen-hdpi-portrait.png" />
     <gap:splash gap:qualifier="port-xhdpi" gap:platform="android" src="res/screen/android/screen-xhdpi-portrait.png" />
-    <gap:splash gap:qualifier="land-ldpi" gap:platform="android" src="res/screen/android/screen-mdpi-landscape.png" />
-    <gap:splash gap:qualifier="land-mdpi" gap:platform="android" src="res/screen/android/screen-hdpi-landscape.png" />
-    <gap:splash gap:qualifier="land-hdpi" gap:platform="android" src="res/screen/android/screen-xhdpi-landscape.png" />
+    <gap:splash gap:qualifier="port-xxhdpi" gap:platform="android" src="res/screen/android/screen-xxhdpi-portrait.png" />
+    <gap:splash gap:qualifier="port-xxxhdpi" gap:platform="android" src="res/screen/android/screen-xxxhdpi-portrait.png" />
+    <gap:splash gap:qualifier="land-ldpi" gap:platform="android" src="res/screen/android/screen-ldpi-landscape.png" />
+    <gap:splash gap:qualifier="land-mdpi" gap:platform="android" src="res/screen/android/screen-mdpi-landscape.png" />
+    <gap:splash gap:qualifier="land-hdpi" gap:platform="android" src="res/screen/android/screen-hdpi-landscape.png" />
     <gap:splash gap:qualifier="land-xhdpi" gap:platform="android" src="res/screen/android/screen-xhdpi-landscape.png" />
+    <gap:splash gap:qualifier="land-xxhdpi" gap:platform="android" src="res/screen/android/screen-xxhdpi-landscape.png" />
+    <gap:splash gap:qualifier="land-xxxhdpi" gap:platform="android" src="res/screen/android/screen-xxxhdpi-landscape.png" />
     <gap:splash gap:platform="blackberry" src="res/screen/blackberry/screen-225.png" />
     <gap:splash gap:platform="ios" height="480" src="res/screen/ios/screen-iphone-portrait.png" width="320" />
     <gap:splash gap:platform="ios" height="960" src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" />
