@@ -3,13 +3,13 @@
 	xmlns="http://www.w3.org/ns/widgets" 
 	xmlns:gap="http://phonegap.com/ns/1.0" 
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	id="com.matrixlms.k2t.android" 
+	id="com.ecampus.matrixlms.app.android" 
 	version="1.0.0">
-    <name>Art Van Selling Institute</name>
+    <name>Swiss eLearning Institute</name>
     <description>
-        The Art Van Selling Institute (AVSI) is a sales education institute designed to inspire individuals to pursue and enhance their career in Sales. With the AVSI mobile app you can access course content, review assessments, track your progress, collaborate with fellow learners/instructors, share resources, receive notifications, and more.
+        Learning is made easier and more exciting with Swiss eLearning Institute App!
     </description>
-    <author email="wadesolomon@yahoo.com" href="http://k2t.matrixlms.com">
+    <author email="d.feledi@swissmc.ch" href="https://ecampus.matrixlms.com">
         MedPower
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />

@@ -8,8 +8,9 @@ var store = window.localStorage;
 //branded apps
 //var domain = 'mckesson.medpower.org';
 //var domain = 'nyack.medpower.org';
-var domain = 'k2t.matrixlms.com';
+//var domain = 'k2t.matrixlms.com';
 //var domain = 'sandbox.edu-20.com:3000';
+var domain = 'ecampus.matrixlms.com';
 
 //var domainProtocol = 'http';
 var domainProtocol = 'https';
