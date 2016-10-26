@@ -3,14 +3,14 @@
 	xmlns="http://www.w3.org/ns/widgets" 
 	xmlns:gap="http://phonegap.com/ns/1.0" 
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	id="com.ecampus.matrixlms.app.android" 
+	id="edu.sti.elms.app.android" 
 	version="1.0.0">
-    <name>Swiss eLearning Institute</name>
+    <name>STI eLMS</name>
     <description>
-        Learning is made easier and more exciting with Swiss eLearning Institute App!
+        With an online account, students can access their notes, lectures, handouts etc.
     </description>
-    <author email="d.feledi@swissmc.ch" href="https://ecampus.matrixlms.com">
-        MedPower
+    <author email="dennis.balaga@sti.edu" href="http://elms.sti.edu/">
+        STI
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name='phonegap-version' value='cli-5.2.0' />
@@ -35,8 +35,8 @@
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
     <icon gap:density="hdpi" gap:platform="android" src="res/icon/android/icon-72-hdpi.png" />
     <icon gap:density="xhdpi" gap:platform="android" src="res/icon/android/icon-96-xhdpi.png" />
-    <icon gap:density="xxhdpi" gap:platform="android" src="res/icon/android/icon-144-xhdpi.png" />
-    <icon gap:density="xxxhdpi" gap:platform="android" src="res/icon/android/icon-192-xhdpi.png" />
+    <icon gap:density="xxhdpi" gap:platform="android" src="res/icon/android/icon-144-xxhdpi.png" />
+    <icon gap:density="xxxhdpi" gap:platform="android" src="res/icon/android/icon-192-xxxhdpi.png" />
     <icon gap:platform="blackberry" src="res/icon/blackberry/icon-80.png" />
     <icon gap:platform="blackberry" gap:state="hover" src="res/icon/blackberry/icon-80.png" />
     <icon gap:platform="ios" height="57" src="res/icon/ios/icon-57.png" width="57" />
